@@ -1,0 +1,47 @@
+{
+  "manifest_version": 2,
+  "name": "RCR",
+  "description": "React, Chrome, and Redux example",
+  "version": "0.0.0.1",
+  "background": {
+    "scripts": [
+      "event.js"
+    ],
+    "persistent": true
+  },
+  "permissions": [
+    "tabs",
+    "background",
+    "identity",
+    "notifications",
+    "storage",
+    "alarms",
+    "https://www.google.com/accounts/OAuthGetRequestToken",
+    "https://www.google.com/accounts/OAuthAuthorizeToken",
+    "https://www.google.com/accounts/OAuthGetAccessToken",
+    "https://www.googleapis.com/*",
+    "https://*.googleusercontent.com/*",
+    "https://*.google.com/",
+    "activeTab"
+  ],
+  "oauth2": {
+    "client_id": "935857002917-chsdl9aiji88i46gnm337bnimkt8ki6o.apps.googleusercontent.com",
+    "scopes": [
+        "https://www.googleapis.com/auth/userinfo.email"
+    ]
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApMYOOnCD+/q7mnFCrRThWNt1AZRnZnWVun3YDx/72UJWucsq9rKyHWx8V29nlTnDvuVcgLdViUFBW6eKv//G/VYgSZ378P8/jv4hjiO4GLyBjge5Ii2a5SLirzK3DDgmWnXdxcf2or+L+ry7+KEMV+SXl3nHnq9Vvwa67+gzpN1YstincxcrLcGY0H5EQbsMRqaRDrUeXIY50Ge74DhghJGUwkFo5B8J/efFuIypdSgCDSchIFuY+Wl+u7lzgqbvxCFlYtSTgHLZ1hXUMWSHmdKg5/ricJb+ejDBuh73zuItVeIOlbTyhuq8OmaMXLuTFMVLn9k0BvG3wvihRxWH0wIDAQAB",
+  
+  "content_security_policy": "script-src 'self' https://*.firebaseio.com https://apis.google.com; object-src 'self'",
+  "browser_action": {
+    "default_title": "RCR Example",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "css": [],
+      "js": ["content.js"]
+    }
+  ]
+}
